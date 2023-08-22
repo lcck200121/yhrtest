@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yhr.Mapper.EmployeeMapper">
+    <select id="queryEmployeeList" resultType="Employee">
+    select * from emp
+    </select>
+<!--    <select id="queryUserListById" resultType="Employee">-->
+<!--        select * from emp where id=#{value}-->
+<!--    </select>-->
+    <insert id="addEmployee" parameterType="Employee">
+    insert into emp(name,age,gender,email,department,birth) values (#{name},#{age},#{email},#{gender},#{department},#{birth})
+    </insert>
+<!--    <update id="updateEmployee" parameterType="Employee">-->
+<!--    update emp set name=#{name},age=#{age},gender=#{gender},email=#{email},department=#{department},birth=#{birth} where id=#{id}-->
+<!--    </update>-->
+    <delete id="deleteEmployee" parameterType="Integer">
+        delete from emp where id=#{id}
+    </delete>
+
+</mapper>
